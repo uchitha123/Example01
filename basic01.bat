@@ -1,8 +1,6 @@
 @echo off
-cd C:\SourcesJava\Example01
-IF EXIST C:\SourcesJava\Example01\target rmdir target 
+IF EXIST C:\SourcesJava\Example01\target rmdir target /s /q
 IF NOT EXIST C:\SourcesJava\Example01\target mkdir target
-echo "hhh"
 cd target
 mkdir Example01
 cd Example01
@@ -21,6 +19,10 @@ set CLASSPATH="C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.3\l
 javac -cp %CLASSPATH% -d C:\SourcesJava\Example01\target\Example01\WEB-INF\classes C:\SourcesJava\Example01\src\com\basic\example01\Example01.java
 cd C:\SourcesJava\Example01\target\Example01
 jar -cvf Example01.war * 
+del "C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.3\webapps\Example01.war"
+IF EXIST C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.3\webapps\Example01 rmdir Example01 /s /q
+copy Example01.war "C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.3\webapps"
+cd C:\SourcesJava\Example01
 
 
 

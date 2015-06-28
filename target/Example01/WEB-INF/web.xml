@@ -5,6 +5,6 @@
 </servlet>
 <servlet-mapping>
 <servlet-name>basic</servlet-name>
-<url-pattern>/basic.html</url-pattern>
+<url-pattern>/basic.do</url-pattern>
 </servlet-mapping>
 </web-app>
